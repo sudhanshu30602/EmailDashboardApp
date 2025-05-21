@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+Email Dashboard App
+A React Native app to track and display the number of emails in your inbox using a simple and clean UI. It includes a horizontal carousel and a dashboard with refresh and logout functionality.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Features
+Secure login using email and app password
 
-## Get started
+Displays total number of emails
 
-1. Install dependencies
+Refresh button to fetch updated email count
+Logout (Exit) functionality
 
-   ```bash
-   npm install
-   ```
+Beautiful animated carousel with intro cards
 
-2. Start the app
+Tech Stack
+React Native (with Expo)
 
-   ```bash
-   npx expo start
-   ```
+Axios for HTTP requests
 
-In the output, you'll find options to open the app in a
+Native Animated.FlatList for carousel
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Email count fetched from a custom Node.js backend
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+shots to the screenshots/ folder.
 
-## Get a fresh project
+Setup Instructions
+Clone the repo:
 
-When you're ready, run:
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/email-dashboard-app.git
+cd email-dashboard-app
+Install dependencies:
 
-```bash
-npm run reset-project
-```
+bash
+Copy
+Edit
+npm install
+Start the Expo project:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+bash
+Copy
+Edit
+npm start
+Make sure the backend is running
+This app expects an API endpoint at:
 
-## Learn more
+arduino
+Copy
+Edit
+http://192.168.29.188:3001/get-email-count
+You’ll need to run your Node.js server locally or update the IP accordingly.
 
-To learn more about developing your project with Expo, look at the following resources:
+ API Request Format
+bash
+Copy
+Edit
+POST /get-email-count
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+{
+  "email": "your-email@example.com",
+  "appPassword": "your-app-password"
+}
+✅ Response
+json
+Copy
+Edit
+{
+  "totalEmails": 125
+}
+Testing
+Manual testing only (for now). You can test the app by running it on a device or simulator through Expo Go.
